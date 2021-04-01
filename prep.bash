@@ -1,19 +1,17 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-#git clone https://github.com/mattwheeler-shi/threatReplayer.git
-sudo apt update
-sudo apt upgrade
-sudo apt -y install wireshark-common tshark tcpdump perl* build-essential ethtool
-sudo mkdir /opt/threatReplayer
-sudo mkdir /home/results
-sudo mkdir /home/results/archive
-sudo mkdir /PCAPS
-sudo mv Demo/* /PCAPS/
-sudo mv * /opt/threatReplayer
+apt update
+apt -y upgrade
+apt -y install perl* wireshark-common tcpdump tshark ethtool
+
+mkdir /opt/threatReplayer
 cd /opt/threatReplayer
-sudo tar -xzvf TPR_v*
-sudo chmod a+x *.bash
-#  ./install
-#  ./install
-#  ./miniSrv
-ls -l
+git clone https://github.com/mattwheeler-shi/setup.git
+mv setup/* /opt/threatReplayer
+tar -xzvf ./TPR_v1.3.5.tgz
+mkdir /PCAPS
+cd /
+git clone https://github.com/mattwheeler-shi/2009-2013.git
+git clone https://github.com/mattwheeler-shi/Demo_Pcaps.git
+mv /Demo_Pcaps/PCAPS/* /PCAPS
+mv /2009-2013/* /PCAPS
