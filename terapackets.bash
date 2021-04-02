@@ -119,9 +119,9 @@ if [[ ${ALLsingle} == "a" ]]; then
 		date
 		echo
 		echo "All years"
-		echo "${DIR}/runAll /PCAPS/ ${IP0}.3.11-${IP0}.3.136 ${IP0}.1.11-${IP0}.1.136 --shuffle --wait"
+		echo "${DIR}/runAll /PCAPS/ ${IP0}.3.11-${IP0}.3.136 ${IP0}.1.11-${IP0}.1.136 --worker 2 --shuffle --wait"
 		ulimit -n 50000
-		perl ${DIR}/runAll /PCAPS/ ${IP0}.3.11-${IP0}.3.136 ${IP0}.1.11-${IP0}.1.136 --shuffle --wait
+		perl ${DIR}/runAll /PCAPS/ ${IP0}.3.11-${IP0}.3.136 ${IP0}.1.11-${IP0}.1.136 --worker 2 --shuffle --wait
 		mkdir "${HOMEDIR}/${TESTDIR}"
 		mv ${DIR}/result_0_1.txt ${HOMEDIR}/${TESTDIR}/${VENDOR}_loop_${TESTDIR}_results.csv
 		mv ${DIR}/debugpcap0.pcap ${HOMEDIR}/${TESTDIR}/${VENDOR}_loop_${TESTDIR}_port0.pcap
@@ -174,9 +174,9 @@ if [[ ${ALLsingle} == "b" ]]; then
 	date
 	echo
 	echo "${YEAR}"
-	echo "${DIR}/runAll /PCAPS/ ${IP0}.3.11-${IP0}.3.136 ${IP0}.1.11-${IP0}.1.136 --shuffle --wait"
+	echo "${DIR}/runAll /PCAPS/ ${IP0}.3.11-${IP0}.3.136 ${IP0}.1.11-${IP0}.1.136 --worker 2 --shuffle --wait"
 	ulimit -n 50000
-	perl ${DIR}/runAll /PCAPS/${YEAR} ${IP0}.3.11-${IP0}.3.136 ${IP0}.1.11-${IP0}.1.136 --shuffle --wait
+	perl ${DIR}/runAll /PCAPS/${YEAR} ${IP0}.3.11-${IP0}.3.136 ${IP0}.1.11-${IP0}.1.136 --worker 2 --shuffle --wait
 	mkdir "${HOMEDIR}/${YEAR}"
 	mv ${DIR}/result_0_1.txt ${HOMEDIR}/${YEAR}/${VENDOR}_${YEAR}_results.csv
 	mv ${DIR}/debugpcap0.pcap ${HOMEDIR}/${YEAR}/${VENDOR}_${YEAR}_port0.pcap
