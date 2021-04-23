@@ -97,24 +97,6 @@ echo
 read -p '${IP0}.3.11-${IP0}.3.' CLIENT
 echo
 echo
-mv /opt/threatReplayer/threatReplay.cfg /opt/threatReplayer/threatReplay.cfg.old
-echo "[" > /opt/threatReplayer/threatReplay.cfg
-echo " {" >> /opt/threatReplayer/threatReplay.cfg
-echo "    "route" : "10.${LANE_NUM}.3.4"," >> /opt/threatReplayer/threatReplay.cfg
-echo "    "linkStatus" : "UP"," >> /opt/threatReplayer/threatReplay.cfg
-echo "    "mask" : "24"," >> /opt/threatReplayer/threatReplay.cfg
-echo "    "intf" : "eth1"," >> /opt/threatReplayer/threatReplay.cfg
-echo "    "ips" : "10.${LANE_NUM}.3.11-10.${LANE_NUM}.3.${CLIENT}"" >> /opt/threatReplayer/threatReplay.cfg
-echo "  }," >> /opt/threatReplayer/threatReplay.cfg
-echo "  {" >> /opt/threatReplayer/threatReplay.cfg
-echo "    "intf" : "eth2"," >> /opt/threatReplayer/threatReplay.cfg
-echo "    "ips" : "10.${LANE_NUM}.1.11-10.${LANE_NUM}.1.${CLIENT}"," >> /opt/threatReplayer/threatReplay.cfg
-echo "    "route" : "10.${LANE_NUM}.1.4"," >> /opt/threatReplayer/threatReplay.cfg
-echo "    "linkStatus" : "UP"," >> /opt/threatReplayer/threatReplay.cfg
-echo "    "mask" : "24"" >> /opt/threatReplayer/threatReplay.cfg
-echo " }" >> /opt/threatReplayer/threatReplay.cfg
-echo "]" >> /opt/threatReplayer/threatReplay.cfg
-
 echo "Would you like to run - "
 echo
 echo "(a)  All strikes, all years"
